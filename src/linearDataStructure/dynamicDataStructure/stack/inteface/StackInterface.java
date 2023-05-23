@@ -1,10 +1,10 @@
 package linearDataStructure.dynamicDataStructure.stack.inteface;
 
-public interface StackInterface {
+public interface StackInterface<T> {
 
-    public void push(int element) throws Exception;
-	public int pop() throws Exception;
-	public int top() throws Exception;
+    public void push(T element) throws Exception;
+	public T pop() throws Exception;
+	public T top() throws Exception;
 	public boolean isEmpty();
 	public boolean isFull();
 

@@ -2,36 +2,52 @@ package linearDataStructure.dynamicDataStructure.stack;
 
 import linearDataStructure.dynamicDataStructure.stack.inteface.StackInterface;
 
-public class DynamicStack implements StackInterface{
+public class DynamicStack<T> implements StackInterface<T>{
 
+    private Node<T> top;
+    private int lenght;
+
+    public DynamicStack(){
+        this.top = null;
+        this.lenght = 0;
+    }
     @Override
-    public void push(int element) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'push'");
+    public void push(T element) throws Exception {
+        Node<T> newN = new Node<>();
+        newN.setElement(element);
+        newN.setNext(top);
+        top = newN;
+        lenght++;
     }
 
     @Override
-    public int pop() throws Exception {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
+    public T pop() throws Exception {
+        if(isEmpty()){
+            throw new Exception("Pilha Vazia"); 
+        }
+        T e = top.getElement();
+        top = top.getNext();
+        lenght--;
+        return e;
     }
 
     @Override
-    public int top() throws Exception {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'top'");
+    public T top() throws Exception {
+        if(isEmpty()){
+            throw new Exception("Pilha Vazia");
+        }
+        return top.getElement();
     }
 
     @Override
     public boolean isEmpty() {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+        return lenght == 0;
     }
-
     @Override
     public boolean isFull() {
-        
         throw new UnsupportedOperationException("Unimplemented method 'isFull'");
     }
+
+
     
 }
