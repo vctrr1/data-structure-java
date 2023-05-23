@@ -17,11 +17,12 @@ public class App {
         DynamicStack<Integer> ds = new DynamicStack<>();
         ds.push(1);
         ds.push(2);
+        ds.push(3);
 
         System.out.println("Saiu: " + ds.pop());
-        System.out.println(ds.top());
-        System.out.println("Saiu: " + ds.pop());
-
+        System.out.println(ds);
+        ds.pop();
+        System.out.println(ds);
         System.out.println("-------------------------------------------------");
 
         StaticQueue<Integer> st = new StaticQueue<>(5);

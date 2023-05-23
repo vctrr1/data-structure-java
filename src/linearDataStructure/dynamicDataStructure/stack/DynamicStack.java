@@ -47,7 +47,9 @@ public class DynamicStack<T> implements StackInterface<T>{
     public boolean isFull() {
         throw new UnsupportedOperationException("Unimplemented method 'isFull'");
     }
+    @Override
+    public String toString() {
+        return "DynamicStack Topo = " + top + ", Topo da Pilha = Elemento " + top.getElement();
+    }
 
-
-    
 }

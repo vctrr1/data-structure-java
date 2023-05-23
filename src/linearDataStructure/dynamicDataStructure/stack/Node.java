@@ -26,7 +26,7 @@ public class Node<T> {
     
     @Override
     public String toString() {
-        return "Node [element=" + element + ", next=" + next + "]";
+        return "Node [Elemento = " + element + ", Proximo --> " + next + "]";
     }
 
 
