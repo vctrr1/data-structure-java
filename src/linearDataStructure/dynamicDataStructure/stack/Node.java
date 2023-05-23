@@ -5,7 +5,7 @@ public class Node<T> {
     private Node<T> next;
 
     public Node(){
-
+        this.next = null;
     }
 
     public T getElement() {

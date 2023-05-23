@@ -1,5 +1,7 @@
 package linearDataStructure.dynamicDataStructure.stack;
 
+import java.util.Arrays;
+
 import linearDataStructure.dynamicDataStructure.stack.inteface.StackInterface;
 
 public class StaticStack<T> implements StackInterface<T>{
@@ -39,6 +41,7 @@ public class StaticStack<T> implements StackInterface<T>{
             throw new Exception("Pilha Vazia");
         }
         T e = elements[top];
+        elements[top] = null; //set null pq vai ser tirado
         top--;
         return e;
     }
@@ -59,6 +62,11 @@ public class StaticStack<T> implements StackInterface<T>{
     @Override
     public boolean isFull() {
         return top == elements.length -1;
+    }
+
+    @Override
+    public String toString() {
+        return "StaticStack -> Elementos = " + Arrays.toString(elements) + ", Topo da Pilha = Casa " + (top + 1);
     }
     
 }
