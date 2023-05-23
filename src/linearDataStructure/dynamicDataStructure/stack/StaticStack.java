@@ -4,35 +4,46 @@ import linearDataStructure.dynamicDataStructure.stack.inteface.StackInterface;
 
 public class StaticStack implements StackInterface{
 
-    int[] vetor;
+    int[] elements;
+    int top;
+
+    public StaticStack(){
+        elements = new int[10];
+        top = -1; //invalid position vet elements
+    }
 
     @Override
-    public void push(int element) throws Exception {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'push'");
+    public void push(int e) throws Exception {
+        if(isFull()){
+            throw new Exception("Pinha Cheia");
+        }
+        top++;
+        elements[top] = e;
     }
 
     @Override
     public int pop() throws Exception {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
+        if(isEmpty()){
+            throw new Exception("Pilha Vazia");
+        }
+        int e = elements[top];
+        top--;
+        return e;
     }
 
     @Override
     public int top() throws Exception {
-        
-        throw new UnsupportedOperationException("Unimplemented method 'top'");
+        return elements[top];
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+        return top == -1;
     }
 
     @Override
     public boolean isFull() {
-
-        throw new UnsupportedOperationException("Unimplemented method 'isFull'");
+        return top == elements.length -1;
     }
     
 }
