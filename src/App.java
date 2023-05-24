@@ -3,6 +3,7 @@ import linearDataStructure.dynamicDataStructure.queue.DynamicQueue;
 import linearDataStructure.dynamicDataStructure.queue.StaticQueue;
 import linearDataStructure.dynamicDataStructure.stack.DynamicStack;
 import linearDataStructure.dynamicDataStructure.stack.StaticStack;
+import linearDataStructure.staticDataStructure.Vetor.Vector;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -65,5 +66,27 @@ public class App {
         ll.removeAtIndex(1);
         System.out.println(ll);
 
+        System.out.println("-------------------------------------------------");
+
+        Vector<Integer> v = new Vector<>(10); 
+        v.addEndVector(1);
+        v.addEndVector(2);
+        v.addEndVector(3);
+        v.addEndVector(4);
+        v.addEndVector(5);
+        System.out.println(v);
+        v.addStartOfVector(22);
+        System.out.println(v);
+        System.out.println(v.searchByIndex(0));
+        System.out.println(v.searchElement(1));
+        System.out.println(v.removeStart());
+        System.out.println(v.addByIndex(55, 8) ? "Conseguiu" : "N conseguiu");
+        System.out.println(v);
+        System.out.println(v.removeByIndex(2));
+        System.out.println(v);
+        System.out.println(v.removeByIndex(2));
+        System.out.println(v);
+        System.out.println(v.removeByIndex(3));
+        System.out.println(v);
     }
 }
