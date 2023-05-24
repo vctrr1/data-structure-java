@@ -1,5 +1,4 @@
 package linearDataStructure.dynamicDataStructure.queue;
-import java.io.EOFException;
 
 import linearDataStructure.dynamicDataStructure.queue.utils.QueueInterface;
 import linearDataStructure.dynamicDataStructure.stack.utils.Node;
@@ -19,8 +18,7 @@ public class DynamicQueue<T> implements QueueInterface<T> {
 
     @Override
     public void enqueue(T element) {
-        Node<T> newN = new Node<>();
-        newN.setElement(element);
+        Node<T> newN = new Node<>(element);
         if(isEmpty()){
             start = newN;
             end = newN;

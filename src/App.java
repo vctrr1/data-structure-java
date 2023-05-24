@@ -1,3 +1,4 @@
+import linearDataStructure.dynamicDataStructure.linkedList.LinkedList;
 import linearDataStructure.dynamicDataStructure.queue.DynamicQueue;
 import linearDataStructure.dynamicDataStructure.queue.StaticQueue;
 import linearDataStructure.dynamicDataStructure.stack.DynamicStack;
@@ -47,6 +48,22 @@ public class App {
         System.out.println( "Primeiro Elemento: " + dq.firstItem());
         System.out.println("Saiu: " + dq.dequeue());
         System.out.println(dq);
+
+        System.out.println("-------------------------------------------------");
+
+        LinkedList<Integer> ll = new LinkedList<>();
+        ll.addTail(1);
+        ll.addTail(2);
+        ll.addTail(3);
+        ll.addTail(4);
+
+        System.out.println(ll.removeTail());
+        ll.addHead(5);
+        System.out.println(ll);
+        ll.addAtIndex(51, 3);
+        System.out.println(ll);
+        ll.removeAtIndex(1);
+        System.out.println(ll);
 
     }
 }

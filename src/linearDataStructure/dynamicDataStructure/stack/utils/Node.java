@@ -5,6 +5,11 @@ public class Node<T> {
     private Node<T> next;
 
     public Node(){
+        
+    }
+
+    public Node(T element){
+        this.element = element;
         this.next = null;
     }
 

@@ -14,8 +14,7 @@ public class DynamicStack<T> implements StackInterface<T>{
     }
     @Override
     public void push(T element) throws Exception {
-        Node<T> newN = new Node<>();
-        newN.setElement(element);
+        Node<T> newN = new Node<>(element);
         newN.setNext(top);
         top = newN;
         lenght++;
