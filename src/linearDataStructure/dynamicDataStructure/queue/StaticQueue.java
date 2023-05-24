@@ -1,6 +1,8 @@
 package linearDataStructure.dynamicDataStructure.queue;
 
-public class StaticQueue<T> {
+import linearDataStructure.dynamicDataStructure.queue.utils.QueueInterface;
+
+public class StaticQueue<T> implements QueueInterface<T>{
     private T[] elements;
     private int size;
     int end, start;
@@ -23,6 +25,7 @@ public class StaticQueue<T> {
         end =  - 1;
     }
 
+    @Override
     public void enqueue(T elemento){
         if(isFull()){
             System.out.println("Lista Cheia");
@@ -39,6 +42,7 @@ public class StaticQueue<T> {
         size++;
     }
 
+    @Override
     public T dequeue(){
         if(isEmpty()){
             System.out.println("Pilha Vazia");
@@ -49,14 +53,17 @@ public class StaticQueue<T> {
         return e;
     }
 
+    @Override
     public int size(){
         return size;
     }
 
+    @Override
     public T firstItem(){
         return elements[start];
     }
 
+    @Override
     public boolean isEmpty(){
         return size == 0;
     }

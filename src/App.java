@@ -1,3 +1,4 @@
+import linearDataStructure.dynamicDataStructure.queue.DynamicQueue;
 import linearDataStructure.dynamicDataStructure.queue.StaticQueue;
 import linearDataStructure.dynamicDataStructure.stack.DynamicStack;
 import linearDataStructure.dynamicDataStructure.stack.StaticStack;
@@ -32,8 +33,20 @@ public class App {
         st.enqueue(4);
 
         System.out.println("Saiu: " + st.dequeue());
-
         System.out.println("Proximo: " + st.firstItem());
+
+        System.out.println("-------------------------------------------------");
+
+        DynamicQueue<Integer> dq = new DynamicQueue<>();
+
+        dq.enqueue(1);
+        dq.enqueue(2);
+        dq.enqueue(3);
+        dq.enqueue(4);
+
+        System.out.println( "Primeiro Elemento: " + dq.firstItem());
+        System.out.println("Saiu: " + dq.dequeue());
+        System.out.println(dq);
 
     }
 }
