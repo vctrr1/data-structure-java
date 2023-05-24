@@ -1,4 +1,4 @@
-package linearDataStructure.dynamicDataStructure.stack.inteface;
+package linearDataStructure.dynamicDataStructure.stack.utils;
 
 public interface StackInterface<T> {
 

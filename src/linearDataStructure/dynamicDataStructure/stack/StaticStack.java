@@ -2,7 +2,7 @@ package linearDataStructure.dynamicDataStructure.stack;
 
 import java.util.Arrays;
 
-import linearDataStructure.dynamicDataStructure.stack.inteface.StackInterface;
+import linearDataStructure.dynamicDataStructure.stack.utils.StackInterface;
 
 public class StaticStack<T> implements StackInterface<T>{
 

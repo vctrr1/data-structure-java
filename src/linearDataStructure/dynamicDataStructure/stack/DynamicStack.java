@@ -1,6 +1,7 @@
 package linearDataStructure.dynamicDataStructure.stack;
 
-import linearDataStructure.dynamicDataStructure.stack.inteface.StackInterface;
+import linearDataStructure.dynamicDataStructure.stack.utils.Node;
+import linearDataStructure.dynamicDataStructure.stack.utils.StackInterface;
 
 public class DynamicStack<T> implements StackInterface<T>{
 

@@ -1,4 +1,4 @@
-package linearDataStructure.dynamicDataStructure.stack;
+package linearDataStructure.dynamicDataStructure.stack.utils;
 
 public class Node<T> {
     private T element;
