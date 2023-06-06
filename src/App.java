@@ -4,6 +4,7 @@ import linearDataStructure.dynamicDataStructure.queue.StaticQueue;
 import linearDataStructure.dynamicDataStructure.stack.DynamicStack;
 import linearDataStructure.dynamicDataStructure.stack.StaticStack;
 import linearDataStructure.staticDataStructure.Vetor.Vector;
+import nonLinearDataStructure.tree.binaryTree.Tree;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -88,5 +89,12 @@ public class App {
         System.out.println(v);
         System.out.println(v.removeByIndex(3));
         System.out.println(v);
+
+        System.out.println("-------------------------------------------------");
+        Tree<Integer> t = new Tree<Integer>();
+        t.addElement(2);
+        t.addElement(1);
+        t.addElement(3);
+        System.out.println(t);
     }
 }

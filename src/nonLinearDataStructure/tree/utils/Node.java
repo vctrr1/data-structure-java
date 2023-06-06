@@ -35,5 +35,10 @@ public class Node<T> {
         this.right = right;
     }
 
+    @Override
+    public String toString() {
+        return "Node [element=" + element + ", left=" + left + ", right=" + right + "]";
+    }
+
     
 }
