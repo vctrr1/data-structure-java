@@ -104,6 +104,8 @@ public class App {
         t.addElement(20);
         ArrayList<Integer> inOrderList = t.inOrder(t.getRoot());
         System.out.println(inOrderList);
+        ArrayList<Integer> preOrderList = t.preOrder(t.getRoot());
+        System.out.println(preOrderList);
         System.out.println(t);
     }
 }
