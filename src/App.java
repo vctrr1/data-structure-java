@@ -106,6 +106,8 @@ public class App {
         System.out.println(inOrderList);
         ArrayList<Integer> preOrderList = t.preOrder(t.getRoot());
         System.out.println(preOrderList);
+        ArrayList<Integer> posOrderList = t.posOrder(t.getRoot());
+        System.out.println(posOrderList);
         System.out.println(t);
     }
 }

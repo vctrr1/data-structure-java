@@ -70,6 +70,20 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
+    public ArrayList<T> posOrder(Node<T> node) {
+        ArrayList<T> result = new ArrayList<>();
+        posOrderTraversal(node, result);
+        return result;
+    }
+    
+    private void posOrderTraversal(Node<T> node, ArrayList<T> result) { //O sufixo "Traversal" é frequentemente usado para indicar que o método é responsável por percorrer a estrutura de dados, visitando cada nó de acordo com uma determinada ordem.
+        if (node != null) {
+            posOrderTraversal(node.getLeft(), result);
+            posOrderTraversal(node.getRight(), result);
+            result.add(node.getElement());
+        }
+    }
+
     public Node<T> getRoot() {
         return root;
     }
