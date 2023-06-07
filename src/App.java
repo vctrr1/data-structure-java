@@ -1,10 +1,12 @@
+import java.util.ArrayList;
+
 import linearDataStructure.dynamicDataStructure.linkedList.LinkedList;
 import linearDataStructure.dynamicDataStructure.queue.DynamicQueue;
 import linearDataStructure.dynamicDataStructure.queue.StaticQueue;
 import linearDataStructure.dynamicDataStructure.stack.DynamicStack;
 import linearDataStructure.dynamicDataStructure.stack.StaticStack;
 import linearDataStructure.staticDataStructure.Vetor.Vector;
-import nonLinearDataStructure.tree.binaryTree.Tree;
+import nonLinearDataStructure.tree.binaryTree.BinaryTree;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -91,10 +93,17 @@ public class App {
         System.out.println(v);
 
         System.out.println("-------------------------------------------------");
-        Tree<Integer> t = new Tree<Integer>();
-        t.addElement(2);
-        t.addElement(1);
-        t.addElement(3);
+        BinaryTree<Integer> t = new BinaryTree<Integer>();
+        t.addElement(10);
+        t.addElement(8);
+        t.addElement(5);
+        t.addElement(9);
+        t.addElement(7);
+        t.addElement(18);
+        t.addElement(13);
+        t.addElement(20);
+        ArrayList<Integer> inOrderList = t.inOrder(t.getRoot());
+        System.out.println(inOrderList);
         System.out.println(t);
     }
 }
