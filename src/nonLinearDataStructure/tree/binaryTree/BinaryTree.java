@@ -1,11 +1,14 @@
 package nonLinearDataStructure.tree.binaryTree;
 
+import java.util.ArrayList;
+
 import nonLinearDataStructure.tree.utils.Node;
 
-public class Tree<T extends Comparable<T>> {
-    Node<T> root;
+public class BinaryTree<T extends Comparable<T>> {
+    private Node<T> root;
+    private int size = 0;
 
-    public Tree(){
+    public BinaryTree(){
         this.root = null;
     }
 
@@ -22,6 +25,7 @@ public class Tree<T extends Comparable<T>> {
                         current = current.getLeft();
                     }else{
                         current.setLeft(newElement);
+                        size++;
                         break;
                     }
                 }else {
@@ -29,6 +33,7 @@ public class Tree<T extends Comparable<T>> {
                         current = current.getRight();
                     }else {
                         current.setRight(newElement);
+                        size++;
                         break;
                     }
                 }
@@ -37,11 +42,27 @@ public class Tree<T extends Comparable<T>> {
         return;
     }
 
+    public ArrayList<T> inOrder(Node<T> node) {
+        ArrayList<T> result = new ArrayList<>();
+        inOrderTraversal(node, result);
+        return result;
+    }
+    
+    private void inOrderTraversal(Node<T> node, ArrayList<T> result) { //O sufixo "Traversal" é frequentemente usado para indicar que o método é responsável por percorrer a estrutura de dados, visitando cada nó de acordo com uma determinada ordem.
+        if (node != null) {
+            inOrderTraversal(node.getLeft(), result);
+            result.add(node.getElement());
+            inOrderTraversal(node.getRight(), result);
+        }
+    }
+
+    public Node<T> getRoot() {
+        return root;
+    }
+
     @Override
     public String toString() {
         return "Tree [root=" + root + "]";
     }
-
-    
 
 }
