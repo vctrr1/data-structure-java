@@ -42,6 +42,55 @@ public class BinaryTree<T extends Comparable<T>> {
         return;
     }
 
+    public void removeElement(T element) {
+        root = remove(root, element);
+    }
+    
+    private Node<T> remove(Node<T> current, T element) {
+        if (current == null) {
+            return null;
+        }
+        int compareResult = element.compareTo(current.getElement());
+        if (compareResult < 0) {
+            current.setLeft(remove(current.getLeft(), element));
+        } else if (compareResult > 0) {
+            current.setRight(remove(current.getRight(), element));
+        } else {
+            //Elemento encontrado
+            if (current.getLeft() == null && current.getRight() == null) {
+                // Caso 1: O nó é uma folha, basta removê-lo
+                size--;
+                return null;
+            } else if (current.getLeft() == null) {
+                // Caso 2: O nó tem apenas um filho direito, substitua-o pelo filho direito
+                size--;
+                return current.getRight();
+            } else if (current.getRight() == null) {
+                // Caso 2: O nó tem apenas um filho esquerdo, substitua-o pelo filho esquerdo
+                size--;
+                return current.getLeft();
+            } else {
+                // Caso 3: O nó tem filhos à esquerda e à direita
+                // Encontre o elemento mínimo na subárvore direita (ou o elemento máximo na subárvore esquerda)
+                // e substitua o nó atual por esse elemento
+                Node<T> minNode = findMinimumNode(current.getRight());
+                current.setElement(minNode.getElement());
+                // Remover o nó mínimo da subárvore direita
+                current.setRight(remove(current.getRight(), minNode.getElement()));
+            }
+        }
+    
+        return current;
+    }
+    
+    private Node<T> findMinimumNode(Node<T> node) {
+        if (node.getLeft() == null) {
+            return node;
+        }
+        return findMinimumNode(node.getLeft());
+    }
+    
+
     public ArrayList<T> inOrder(Node<T> node) {
         ArrayList<T> result = new ArrayList<>();
         inOrderTraversal(node, result);
