@@ -1,7 +1,7 @@
 package nonLinearDataStructure.graph;
-
 import java.util.ArrayList;
 
+//grafo direcionado
 public class Graphs<T> {
     private ArrayList<T> vertices;
     private ArrayList<T> arestas;
